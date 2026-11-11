@@ -2,11 +2,9 @@ import 'dart:math';
 
 enum QueueModelType { mm1, mms }
 
-/// Formatea con coma decimal (estilo es-CO).
 String fmt(double v, [int d = 2]) => v.toStringAsFixed(d).replaceAll('.', ',');
 
-/// Convierte texto (un dato por linea o separados por espacio/;) a numeros.
-/// Acepta coma o punto decimal. Lanza FormatException si hay datos invalidos.
+
 List<double> parseNumbers(String text) {
   final cleaned = text.trim();
   if (cleaned.isEmpty) return [];
@@ -140,11 +138,9 @@ class QueueModel {
     );
   }
 
-  /// Correccion de Allen-Cunneen (llegadas Poisson, CVa = 1).
   static double correctedWq(double wqSec, double cvService) =>
       wqSec * (1 + cvService * cvService) / 2;
 
-  /// Filas [tiempo entre llegadas, lambda/min, Wq con 1..4 taquillas] en texto.
   static List<List<String>> scenarioRows(double meanServiceSec, List<double> arrivals) {
     return [
       for (final t in arrivals)
