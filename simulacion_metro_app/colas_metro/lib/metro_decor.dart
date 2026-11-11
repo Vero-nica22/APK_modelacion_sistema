@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'theme.dart';
 
-/// Lineas de metro decorativas (sin logos): dos lineas que se cruzan con estaciones.
 class MetroLinesPainter extends CustomPainter {
   const MetroLinesPainter();
 
@@ -45,7 +44,7 @@ class MetroLinesPainter extends CustomPainter {
     station(Offset(w * .15, h * .62));
     station(Offset(w * .32, h * .62));
     station(Offset(w * .85, h * .62 + d));
-    station(Offset(w * .5 + h * .04, h * .66), r: 10); // transbordo
+    station(Offset(w * .5 + h * .04, h * .66), r: 10); 
   }
 
   @override
