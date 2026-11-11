@@ -25,7 +25,6 @@ pw.Widget _table(List<List<String>> rows) {
   );
 }
 
-/// Genera el informe PDF. Solo usa caracteres Latin-1 (fuente estandar del PDF).
 Future<Uint8List> buildReport(QueueInputData d, QueueResult r) async {
   final doc = pw.Document();
   final now = DateTime.now();
